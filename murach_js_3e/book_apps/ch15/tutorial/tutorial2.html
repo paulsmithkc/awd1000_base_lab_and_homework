@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial</title>
+    <link type="text/css" rel="stylesheet" href="tutorial.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $( "#prev" ).click(function() {
+                location.replace("tutorial1.html");
+            });
+            
+            $( "#next" ).click(function() {
+                location.replace("tutorial3.html");
+            });
+        }); 
+    </script>
+</head>
+<body>
+  <main>
+    <h1>Tutorial - page 2</h1> 
+    <p>Here's the second thing you need to know about our site.</p>
+    
+    <input type="button" id="prev" value="Prev">
+    <input type="button" id="next" value="Next">
+  </main>  
+</body>
+</html>

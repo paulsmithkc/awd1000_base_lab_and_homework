@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slideshow</title>
+  <link rel="stylesheet" type="text/css" href="slideshow.css">
+  <script type="text/javascript" src="slideshow.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Fishing Slide Show</h1>
+        <ul id="image_list">
+            <li><a href="images/release.jpg" title="Catch and Release"></a></li>
+            <li><a href="images/deer.jpg" title="Deer at Play"></a></li>
+            <li><a href="images/hero.jpg" title="The Big One!"></a></li>
+            <li><a href="images/bison.jpg" title="Roaming Bison"></a></li>
+        </ul>
+
+        <p>
+            <input type="button" id="start" value="Start">
+            <input type="button" id="pause" value="Pause" disabled="true">
+        </p>
+        <p><img src="images/release.jpg" alt="Catch and Release" id="image"></p>
+        <h2 id="caption">Catch and Release</h2>
+    </main>
+</body>
+</html>

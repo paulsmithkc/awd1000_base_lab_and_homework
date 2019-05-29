@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial</title>
+    <link type="text/css" rel="stylesheet" href="tutorial.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $( "#enter" ).click(function() {
+                location = "main.html";
+            });
+            
+            $( "#tutorial" ).click(function() {
+                location = "tutorial1.html";
+            });
+        }); 
+    </script>
+</head>
+<body>
+  <main>
+    <h1>Welcome to our site!</h1> 
+    <p>If you're an old hand here, just click on Enter and go on in!</p>
+    <p>If you haven't been here before, though, check out our Tutorial.</p>
+    
+    <input type="button" id="enter" value="Enter">
+    <input type="button" id="tutorial" value="Tutorial">
+  </main> 
+</body>
+</html>

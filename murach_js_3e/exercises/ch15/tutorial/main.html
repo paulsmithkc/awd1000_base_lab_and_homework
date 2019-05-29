@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial</title>
+    <link type="text/css" rel="stylesheet" href="tutorial.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $( "#back" ).click(function() {
+                history.back();
+            });
+        }); 
+    </script>
+</head>
+<body>
+  <main>
+    <h1>Here are some cute kittens!</h1> 
+    <img src="images/kittens.jpg" alt="kittens" />
+    <p class="attribution">Image from <a href="https://pixabay.com/" target="_blank">pixabay.com</a></p>
+    
+    <input type="button" id="back" value="Back">
+	
+	Number of pages in history: 
+    <script>
+        document.write( history.length );
+    </script>
+  </main> 
+</body>
+</html>

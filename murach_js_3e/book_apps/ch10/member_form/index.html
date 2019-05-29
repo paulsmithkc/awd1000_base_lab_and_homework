@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Membership Signup</title>
+	<link rel="stylesheet" href="member.css">
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="member.js"></script>
+</head>
+	
+<body>
+<main>
+	<h1>Membership Form</h1>
+	<form action="register.html" method="get"
+		name="member_form" id="member_form">
+		<fieldset>
+	    	<legend>Registration Information</legend>
+	    	<label for="email">Email Address:</label>
+	    	<input type="text" id="email" name="email">
+	    	<span>*</span><br>
+	    	<label for="password">Password:</label>
+	    	<input type="password" id="password" name="password" placeholder="At least 6 characters" >
+	    	<span>*</span><br>
+	    	<label for="verify">Verify Password:</label>
+	    	<input type="password" id="verify" name="verify">
+	    	<span>*</span><br>
+		</fieldset>
+		<fieldset>
+			<legend>Member Information</legend>
+			<label>Membership type:</label>
+			<input type="radio" name="type" id="individual" value="individual" checked>Individual
+			<input type="radio" name="type" id="corporate" value="corporate">Corporate<br>
+			<label for="company_name">Company Name:</label>
+			<input type="text" id="company_name" name="company_name" disabled>
+			<span></span><br>
+			<label for="first_name">First Name:</label>
+			<input type="text" id="first_name" name="first_name">
+			<span>*</span><br>
+			<label for="last_name">Last Name:</label>
+			<input type="text" id="last_name" name="last_name">
+			<span>*</span><br>
+
+			<label for="phone">Phone Number:</label>
+			<input type="text" id="phone" name="phone" placeholder="999-999-9999">
+			<span>*</span><br>
+
+		</fieldset>
+		<fieldset id="buttons">
+			<legend>Submit Your Membership</legend>
+			<label>&nbsp;</label>
+			<input type="submit" id="submit" name="submit" value="Submit">
+			<input type="reset" id="reset" name="reset" value="Reset"><br>
+		</fieldset>
+	</form>
+</main>
+</body>
+</html>

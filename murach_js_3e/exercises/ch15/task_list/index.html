@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+    <link type="text/css" rel="stylesheet" href="task_list.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="task_list.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Task Manager</h1> 
+    <section id="tasks">
+        <label for="task_list">Task List</label><br>
+        <textarea id="task_list" rows="6" cols="50"></textarea>
+    </section>
+    
+    <label for="task">Task</label><br>
+    <input type="text" name="task" id="task"><br>
+
+    <input type="button" name="add_task" id="add_task" value="Add Task"><br>
+    <input type="button" name="clear_tasks" id="clear_tasks" value="Clear Tasks">
+  </main> 
+</body>
+</html>

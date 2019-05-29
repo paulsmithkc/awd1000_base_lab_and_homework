@@ -1,0 +1,35 @@
+.blackjack div { 
+    padding-bottom: 1em;
+    height: 100px; /* height of card image */
+}
+
+.blackjack label {
+    width: 8em;
+    float: left;
+}
+
+.blackjack span {
+    padding-right: 2em;
+}
+
+.blackjack input {
+    width: 7em;
+    margin: 1em 1em 1em 0;
+}
+
+.blackjack img {
+    float: left;
+}
+
+.blackjack .balance, .blackjack .outcome {
+    float: none;
+}
+
+.blackjack .outcome {
+    padding-left: 3em;
+    font-weight: bold;
+}
+
+.blackjack .clear {
+    clear: both;
+}

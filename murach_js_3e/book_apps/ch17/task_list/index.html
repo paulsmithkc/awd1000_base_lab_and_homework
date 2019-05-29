@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="task_list.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="library_task.js"></script>
+    <script src="library_storage.js"></script>
+    <script src="library_tasklist.js"></script>
+    <script src="task_list.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Task List</h1>
+        <div id="tasks"></div>
+        <label for="task">Task:</label><br>
+            <input type="text" name="task" id="task"><br>
+        <label for="due_date">Due Date:</label><br>
+            <input type="text" name="due_date" id="due_date"><br>
+        <input type="button" name="add_task" id="add_task" value="Add Task"><br>
+        <input type="button" name="clear_tasks" id="clear_tasks" value="Clear Tasks">
+        <div class="clear"></div>
+    </main> 
+</body>
+</html>
