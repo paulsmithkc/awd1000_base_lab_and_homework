@@ -1,1 +1,1 @@
-# awd1000_base_lab_and_homework
+# AWD1000 Labs & Homework
