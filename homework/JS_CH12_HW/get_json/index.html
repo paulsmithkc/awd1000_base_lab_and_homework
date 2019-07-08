@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get JSON</title>
+    <!-- Normal style sheet used for layout and general formatting. -->
+    <link href="main.css" rel="stylesheet">
+    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$.getJSON("team.json", function(data) {
+				$.each(data, function() {
+					$.each(this, function(key, value) {
+						$("#team").append(
+								"<img src='" + value.image + "'>" +
+								"<h3>" + value.full_name + "</h3>" + 
+								"<h3>" + value.title + "</h3>" + 
+								"<p>" + value.tag_line + "</p>"
+						);
+					});
+				}); 
+			});
+		});
+    </script>
+</head>
+
+<body>
+    <header></header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h2>The Vecta Corp. Management Team</h2>
+
+		<div id="team"></div>
+    </main>
+    
+    <footer></footer>
+</body>
+</html>
