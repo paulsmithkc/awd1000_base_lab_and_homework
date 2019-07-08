@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Account Profile</title>
+    <link rel="stylesheet" type="text/css" href="profile.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // display date from session storage
+            $("#email").text( sessionStorage.email );
+            $("#phone").text( sessionStorage.phone );
+            $("#zip").text( sessionStorage.zip );
+            $("#dob").text( sessionStorage.dob );
+            
+            $("#back").click(function() {
+                history.back();
+            }); // end of click()
+            
+        }); // end of ready()
+    </script>
+</head>
+
+<body>
+<main class="profile">
+    <h1>My Account Profile</h1>
+    <label>E-Mail:</label>
+        <span id="email">&nbsp;</span><br>
+    <label>Mobile phone:</label>
+        <span id="phone">&nbsp;</span><br>
+    <label>ZIP Code:</label>
+        <span id="zip">&nbsp;</span><br>
+    <label>Date of Birth:</label>
+        <span id="dob">&nbsp;</span><br>
+
+    <input type="button" id="back" value="Back">
+</main>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="cookie.js"></script>
+    <script>
+	"use strict";
+        $(document).ready(function(){
+            var user = getCookieByName( "user" );
+            if (user === "") {
+                $( "#login" ).click(function() {
+                    var user = $("#user").val();
+
+                    if ( user === "" ) {
+                        alert( "Please enter a user name." );
+                        $("#user").focus();
+                    } else {
+                        setCookie( "user", user );
+                        // go to login.html page
+                        
+                    }
+                });
+                $("#user").focus();
+            } else {
+                // go to login.html page
+                
+            }
+        });
+    </script>
+</head>
+
+<body>
+<main>
+    <h1>My Website</h1>
+    <label for="user">User name:</label>
+        <input type="text" id="user"><br>
+    <label>&nbsp;</label>
+        <input type="button" id="login" value="Log In">
+</main>
+</html>
