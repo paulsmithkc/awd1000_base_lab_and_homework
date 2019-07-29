@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Account Profile</title>
+    <link rel="stylesheet" type="text/css" href="profile.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // display query string
+            
+            $("#back").click(function() {
+                history.back();
+            }); // end of click()
+            
+        }); // end of ready()
+    </script>
+</head>
+
+<body>
+<main class="profile">
+    <h1>My Account Profile</h1>
+    <p>Thank you for updating your profile! Please review the information below to make sure it is correct.</p>
+    <span id="profile">&nbsp;</span><br>
+
+    <input type="button" id="back" value="Back">
+</main>
+</html>

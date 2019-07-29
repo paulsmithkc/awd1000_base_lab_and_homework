@@ -36,3 +36,6 @@ Thumbs.db
 *.sbr
 *.tmp
 *.tmp_proj
+
+# npm
+node_modules/

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">	
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="password.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="password.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Generate a strong password</h1>
+        <label for="num">Number of characters:</label>
+		<input type="text" id="num"><br>
+        
+        <label for="password">Password:</label>
+		<input type="text" id="password" disabled><br>
+        
+        <label>&nbsp;</label>
+        <input type="button" id="generate" value="Get Password">
+        <input type="button" id="clear" value="Clear"><br>
+    </main>
+</body>
+</html>

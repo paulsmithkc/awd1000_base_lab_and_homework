@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="cookie.js"></script>
+    <script>
+	"use strict";
+        $(document).ready(function(){
+            var user = getCookieByName( "user" );
+            $("#name").text( user );
+
+            $( "#logout" ).click(function() {
+                deleteCookie( "user" );
+                // go to initial page
+                
+            });
+			
+            $( "#logout" ).focus();
+        });
+    </script>
+</head>
+
+<body>
+<main class="profile">
+    <h1>My Website</h1>
+    <h2>Welcome, <span id="name">&nbsp;</span>!</h2>
+    <input type="button" id="logout" value="Log Out">
+</main>
+</html>
