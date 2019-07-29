@@ -1,17 +1,19 @@
-$(document).ready(function() {
+$(function() {
 	// preload images
 	$("#image_list a").each(function() {
-		var swappedImage = new Image();
+		const swappedImage = new Image();
 		swappedImage.src = $(this).attr("href");
 	});
+
+	const animationSpeed = "slow";
 	
 	// set up event handlers for links    
 	$("#image_list a").hover(
 		function(evt) {
 			// animate thumbnail
-			$(this).stop(true).animate({ top: 15 }, "fast");
-			//$(this).stop(true, true).animate({ top: 15 }, "fast");
-			//$(this).finish().animate({ top: 15 }, "fast");						
+			$(this).stop(true).animate({ top: 15 }, animationSpeed);
+			//$(this).stop(true, true).animate({ top: 15 }, animationSpeed);
+			//$(this).finish().animate({ top: 15 }, animationSpeed);						
 			// swap image
 			var imageURL = $(this).attr("href");
 			$("#image").attr("src", imageURL);
@@ -21,13 +23,13 @@ $(document).ready(function() {
 			$("#caption").text(caption);
 					
 			// cancel the default action of the link
-		    evt.preventDefault();  // jQuery method that's cross-browser compatible
+		  evt.preventDefault();  // jQuery method that's cross-browser compatible
 		},
 		function(evt) {
 			// animate thumbnail
-			$(this).stop(true).animate({ top: 0 }, "fast");
-			//$(this).stop(true, true).animate({ top: 0 }, "fast");
-			//$(this).finish().animate({ top: 0 }, "fast");
+			$(this).stop(true).animate({ top: 0 }, animationSpeed);
+			//$(this).stop(true, true).animate({ top: 0 }, animationSpeed);
+			//$(this).finish().animate({ top: 0 }, animationSpeed);
 		}
 	); // end click
 	
