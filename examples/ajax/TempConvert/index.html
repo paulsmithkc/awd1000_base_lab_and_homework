@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <meta http-equiv="Access-Control-Allow-Origin" content="iwt.ranken.edu"> -->
+  <title>Document</title>
+</head>
+
+<body>
+
+  <form id="ConvertFtoC" method="GET" action="http://iwt.ranken.edu/ExampleWebServices/Temperature/ConvertFtoC">
+    <h1>Convert to Celcius</h1>
+    <div>
+      <input id="ConvertFtoC-value" type="text" name="value" value="32" autofocus />
+    </div>
+    <div>
+      <button id="ConvertFtoC-button" type="submit">Convert</button>
+    </div>
+    <div>
+      <output id="ConvertFtoC-output"></output>
+    </div>
+  </form>
+
+  <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
