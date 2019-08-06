@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Create a project and OAuth Client ID on https://console.cloud.google.com-->
+  <meta name="google-signin-client_id"content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+  <meta name="google-signin-scope" content="email profile">
+  <title>Google Login API</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="container bg-light p-3">
+      <h1>Google Login API</h1>
+      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+      <div id="ProfileInfo" class="p-3">
+        <div class="text-muted">Please login...</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer bg-light mt-5 p-3">
+    <div class="container text-center">
+      <a target="_blank" href="https://console.cloud.google.com">Console</a> |
+      <a target="_blank" href="https://developers.google.com/identity/sign-in/web">Sign-In</a> |
+      <a target="_blank" href="https://developers.google.com/identity/protocols/OAuth2UserAgent">OAuth</a>
+    </div>
+  </footer>
+
+  <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+    function onSignIn(googleUser) {
+      const profile = googleUser.getBasicProfile();
+      $('#ProfileInfo').html(`
+        <div><strong>ID:</strong> ${profile.getId()}</div>
+        <div><strong>Full Name:</strong> ${profile.getName()}</div>
+        <div><strong>Email:</strong> ${profile.getEmail()}</div>
+        <div><img src="${profile.getImageUrl()}" alt="" class="m-3" /></div>
+      `);
+    }
+  </script>
+
+</body>
+
+</html>
