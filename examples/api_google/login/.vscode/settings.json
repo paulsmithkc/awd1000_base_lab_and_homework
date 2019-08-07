@@ -1,0 +1,9 @@
+{
+  "liveServer.settings.host": "localhost",
+  "liveServer.settings.https": {
+    "enable": false,
+    "cert": "C:\\https\\server.crt",
+    "key": "C:\\https\\server.key",
+    "passphrase": "P@ssw0rd"
+  }
+}
