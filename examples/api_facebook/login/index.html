@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Facebook Login API</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="container bg-light p-3">
+      <h1>Facebook Login API</h1>
+      <fb:login-button id="login" scope="public_profile,email,user_friends" onlogin="checkLoginState();">
+      </fb:login-button>
+      <button id="logout" class="btn btn-sm btn-primary d-none">Logout</button>
+      <div id="ProfileInfo" class="p-3">
+        <div class="text-muted">Please login...</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer bg-light mt-5 p-3">
+    <div class="container text-center">
+      <a target="_blank" href="https://developers.facebook.com/docs/facebook-login/web">Facebook Login</a> |
+      <a target="_blank" href="https://developers.facebook.com/docs/facebook-login/web/login-button">Login Button</a> |
+      <a target="_blank" href="https://webisora.com/blog/how-to-enable-https-on-live-server-visual-studio-code/">SSL</a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <script>
+    let userId = null;
+    let accessToken = null;
+
+    // initialize facebook library
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '372144860117280',
+        cookie: true,
+        xfbml: true,
+        version: 'v4.0'
+      });
+      FB.AppEvents.logPageView();
+      FB.getLoginStatus(statusChangeCallback);
+    };
+
+    // respond to the user logging in
+    function checkLoginState() {
+      FB.getLoginStatus(statusChangeCallback);
+    }
+
+    // logout when the user clicks the logout button
+    $('#logout').click(function () {
+      FB.logout(statusChangeCallback);
+    });
+
+    // respond to the login state changing
+    function statusChangeCallback(response) {
+      console.log(response);
+      if (response.status === 'connected') {
+        userId = response.authResponse.userID;
+        accessToken = response.authResponse.accessToken;
+        $('#logout').removeClass('d-none');
+        $('#ProfileInfo').html(`<div><strong>ID:</strong> ${userId}</div>`);
+
+        FB.api(`/me?fields=id,name,email,picture,friends`, 'get', {
+            access_token: accessToken
+          },
+          function (profile) {
+            console.log(profile);
+            $('#ProfileInfo').append(`
+              <div><strong>Name:</strong> ${profile.name}</div>
+              <div><strong>Email:</strong> ${profile.email}</div>
+              <img src="${profile.picture.data.url}" alt="" class="m-3">
+            `);
+          });
+
+      } else {
+        $('#logout').addClass('d-none');
+        $('#ProfileInfo').html('<div class="text-muted">Please login...</div>');
+      }
+    }
+
+    // generate facebook script tag
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+</body>
+
+</html>
