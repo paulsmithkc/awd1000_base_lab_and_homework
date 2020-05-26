@@ -7,6 +7,9 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+.jpg~
+.png~
+.gif~
 
 #Ignore temporary Office files
 ~$*
