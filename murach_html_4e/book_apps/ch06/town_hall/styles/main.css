@@ -1,5 +1,7 @@
 /* type selectors */
 html {
+  min-height: 100vh;
+  background-repeat: no-repeat;
   background-image: -moz-linear-gradient(top, white 0%, #facd8a 100%);
   background-image: -webkit-linear-gradient(top, white 0%, #facd8a 100%);
   background-image: -o-linear-gradient(top, white 0%, #facd8a 100%);
