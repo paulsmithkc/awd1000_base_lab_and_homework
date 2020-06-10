@@ -1,5 +1,7 @@
 /* the styles for the elements */
 html {
+  min-height: 100vh;
+  background-repeat: no-repeat;
   background-image: -webkit-linear-gradient(top, white 0%, #facd8a 100%);
   background-image: -moz-linear-gradient(top, white 0%, #facd8a 100%);
   background-image: -o-linear-gradient(top, white 0%, #facd8a 100%);
