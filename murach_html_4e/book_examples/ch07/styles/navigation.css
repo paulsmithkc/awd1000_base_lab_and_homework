@@ -1,13 +1,11 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 87.5%;
-  width: 742px;
+  width: 744px;
   background-color: white;
   margin: 15px auto;
   padding: 20px;
@@ -22,6 +20,11 @@ h2 {
 
 nav {
   margin-bottom: 2em;
+}
+nav ul,
+nav li {
+  margin: 0;
+  padding: 0;
 }
 
 a:hover,
@@ -104,7 +107,7 @@ a:focus {
 
 /* clearfix */
 #nav_menu_3 > ul::after {
-  content: "";
+  content: '';
   display: block;
-  clear: both; 
+  clear: both;
 }

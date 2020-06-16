@@ -1,13 +1,11 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 87.5%;
-  width: 742px;
+  width: 744px;
   background-color: white;
   margin: 15px auto;
   padding: 20px;
