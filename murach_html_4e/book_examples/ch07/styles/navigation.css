@@ -23,6 +23,13 @@ h2 {
 nav {
   margin-bottom: 2em;
 }
+
+a:hover, a:focus {
+	color: red !important;
+	border-color: red !important;
+	outline-color: red !important;
+}
+
 /* the styles for the vertical navigation menu */
 #nav_menu_1 ul {
   list-style: none;
