@@ -37,6 +37,7 @@ a:hover, a:focus {
   margin-bottom: 1.5em;
 }
 #nav_menu_1 ul li {
+	display: block;
   width: 200px;
   margin-bottom: 0.5em;
   border: 2px solid blue;
@@ -78,6 +79,7 @@ a:hover, a:focus {
   list-style: none;
 }
 #nav_menu_3 ul li {
+	display: block;
   float: left;
 }
 #nav_menu_3 ul li a {
