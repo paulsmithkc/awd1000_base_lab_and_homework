@@ -1,81 +1,93 @@
 * {
-	margin: 0;
-    padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 87.5%;
-	width: 706px;
-	background-color: white;
-	margin: 15px auto;
-	padding: 20px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 87.5%;
+  width: 744px;
+  background-color: white;
+  margin: 15px auto;
+  padding: 20px;
+  /* border: 1px solid black; */
 }
 
-h2 { 
-	font-size: 125%;
-	margin-bottom: .5em;
-	clear: both;
+h2 {
+  font-size: 125%;
+  margin-bottom: 0.5em;
+  clear: both;
 }
 
 nav {
-	margin-bottom: 2em;
-}
-/* The styles for the operation of the 3-tier navigation menu */
-#nav_menu ul {
-	list-style: none;
-	position: relative;    /* So the first submenu can be positioned within the main menu */
-}
-#nav_menu ul li {
-	float: left;
-}
-#nav_menu ul ul {
-	display: none;         /* Don't display submenu until hover of the li element */
-	position: absolute;
-	top: 100%;             /* Position the submenu at the bottom of the main menu */
-}
-#nav_menu ul ul li {
-	float: none;           /* Display the submenus vertically */
-	position: relative;    /* So the second submenu can be positioned within the first submenu */
-}
-#nav_menu ul ul li ul {
-	position: absolute;
-	left: 100%;            /* Position the second submenu at the right side of the li element */ 
-	top: 0;                /* Position the second submenu at the top of the li element */
-}
-#nav_menu ul li.lastitem ul li ul {
-	left: -100%;           /* Position the second submenu at the left side of the li element */ 
-}
-#nav_menu ul li:hover > ul {
-	display: block;        /* Display the submenu on hover of the li element */
-}
-#nav_menu > ul::after {
-	content: "";
-	display: block;
-	clear: both;
+  margin-bottom: 2em;
 }
 
-/* The styles for the formatting of the 3-tier navigation menu */
+a:hover,
+a:focus {
+  border: none !important;
+  outline: 2px solid black !important;
+}
+
+/* The styles for the operation of the 3-tier navigation menu */
 #nav_menu ul {
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  position: relative; /* So the first submenu can be positioned within the main menu */
+  margin: 0;
+  padding: 0;
 }
+#nav_menu ul li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* submenus */
+#nav_menu ul ul {
+  display: none; /* Don't display submenu until hover of the li element */
+  position: absolute;
+  top: 100%; /* Position the submenu at the bottom of the main menu */
+}
+#nav_menu ul ul li {
+  float: none; /* Display the submenus vertically */
+  position: relative; /* So the second submenu can be positioned within the first submenu */
+}
+#nav_menu ul ul ul {
+  position: absolute;
+  left: 100%; /* Position the second submenu at the right side of the li element */
+  top: 0; /* Position the second submenu at the top of the li element */
+}
+#nav_menu ul li:last-of-type ul ul {
+  left: -100%; /* Position the second submenu at the left side of the li element */
+}
+#nav_menu ul li:hover > ul,
+#nav_menu ul li:focus-within > ul {
+  display: block; /* Display the submenu on hover of the li element */
+}
+
+/* clearfix */
+#nav_menu > ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* links */
 #nav_menu ul li a {
-	text-align: center;
-	display: block;
-	width: 176px;
-	padding: 1em 0;
-	text-decoration: none;
-	background-color: blue;
-	color: white;
-	font-weight: bold;
-}
-#nav_menu ul li a.lastitem {
-	width: 178px;               /* So the menu fills the 706px width of the page */
+  display: block;
+  width: 175px;
+  text-align: center;
+  padding: 1em 0;
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
 }
 #nav_menu ul li a.current {
-	color: yellow;
+  color: yellow;
 }
-#nav_menu ul li a:hover, #nav_menu ul li a:focus {
-	background-color: gray;
+#nav_menu ul li a:hover,
+#nav_menu ul li a:focus {
+  color: white;
+  background-color: gray;
 }
