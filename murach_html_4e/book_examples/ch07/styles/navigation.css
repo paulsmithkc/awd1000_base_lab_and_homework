@@ -1,17 +1,17 @@
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
-	padding: 0;
+  padding: 0;
 }
 
 body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 87.5%;
-  width: 740px;
+  width: 742px;
   background-color: white;
   margin: 15px auto;
   padding: 20px;
-  /*	border: 1px solid black*/
+  /* border: 1px solid black; */
 }
 
 h2 {
@@ -24,10 +24,12 @@ nav {
   margin-bottom: 2em;
 }
 
-a:hover, a:focus {
-	color: red !important;
-	border-color: red !important;
-	outline-color: red !important;
+a:hover,
+a:focus {
+  color: white !important;
+  background-color: gray !important;
+  border-color: black !important;
+  outline-color: black !important;
 }
 
 /* the styles for the vertical navigation menu */
@@ -37,7 +39,7 @@ a:hover, a:focus {
   margin-bottom: 1.5em;
 }
 #nav_menu_1 ul li {
-	display: block;
+  display: block;
   width: 200px;
   margin-bottom: 0.5em;
   border: 2px solid blue;
@@ -79,7 +81,7 @@ a:hover, a:focus {
   list-style: none;
 }
 #nav_menu_3 ul li {
-	display: block;
+  display: block;
   float: left;
 }
 #nav_menu_3 ul li a {
@@ -98,4 +100,11 @@ a:hover, a:focus {
 }
 #nav_menu_3 ul li a.current {
   color: yellow;
+}
+
+/* clearfix */
+#nav_menu_3 > ul::after {
+  content: "";
+  display: block;
+  clear: both; 
 }
