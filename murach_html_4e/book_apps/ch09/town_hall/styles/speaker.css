@@ -116,7 +116,7 @@ header img {
   padding: 0;
 }
 #nav_menu ul li {
-  flex-basis: 20%; /* each item will occcupy 20% of the flexbox */
+  flex-basis: 20%; /* each item will occupy 20% of the flexbox */
 }
 #nav_menu ul li a {
   text-align: center;
