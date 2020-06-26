@@ -25,18 +25,58 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <style>
+      .example-jumbotron {
+        color: white;
+        background-image: url('images/grayscale-photo-of-sea-waves-1536314.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .example-jumbotron h1 {
+        font-weight: bolder;
+        text-shadow: 2px 2px black;
+      }
+      .example-jumbotron .btn {
+        font-weight: bolder;
+        box-shadow: 4px 4px black;
+      }
+    </style>
   </head>
   <body>
-    <header class="border-bottom mt-3 mb-3">
+    <header class="container border-bottom mt-3 mb-3">
       <h1>Bootstrap Jumbotron Examples</h1>
     </header>
 
-    <h2 class="mt-5">A Simple Jumbotron</h2>
-<div class="jumbotron bg-dark text-white rounded-0">
-  <div class="container">
-    <h1 class="display-4">A Simple Jumbotron</h1>
-    <a class="btn btn-primary btn-lg" role="button" href="#">Learn more</a>
-  </div>
-</div>
+    <div class="container">
+      <h2 class="mt-5">Simple Jumbotron</h2>
+      <div class="jumbotron bg-dark text-white">
+        <h1 class="display-4">20% off store wide!</h1>
+        <a class="btn btn-primary btn-lg" role="button" href="#">Learn more</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="mt-5">Full-Width Jumbotron</h2>
+    </div>
+    <div class="jumbotron jumbotron-fluid bg-dark text-white">
+      <div class="container">
+        <h1 class="display-4">20% off store wide!</h1>
+        <a class="btn btn-primary btn-lg" role="button" href="#">Learn more</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="mt-5">Jumbotron with background image</h2>
+    </div>
+    <div class="jumbotron jumbotron-fluid example-jumbotron">
+      <h1 class="display-4">20% off store wide!</h1>
+      <a class="btn btn-primary btn-lg" role="button" href="#">Learn more</a>
+    </div>
   </body>
 </html>
