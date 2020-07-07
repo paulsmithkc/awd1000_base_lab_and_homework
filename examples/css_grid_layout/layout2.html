@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid Example 2</title>
+    <style>
+      html {
+        font: 100% arial, helvetica, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+      .sidebar {
+        background: silver;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .sidebar > * {
+        display: block;
+        background: grey;
+        margin-bottom: 1rem;
+      }
+      .logo {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .content > * {
+        display: block;
+        background: grey;
+        margin-bottom: 1rem;
+      }
+      .content header {
+        padding: 0.5rem;
+      }
+      .content h1 {
+        margin: 0;
+      }
+      .spotlight {
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+      }
+      .product {
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+      }
+      .content footer {
+        margin: 0;
+        padding: 0.5rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="sidebar">
+      <img class="logo" src="images/logo.jpg" alt="Company Logo" />
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+      <div>Item 4</div>
+    </nav>
+
+    <div class="content">
+      <header>
+        <h1>Title</h1>
+      </header>
+
+      <img class="spotlight" src="images/spotlight.jpg" alt="Main Image" />
+      <img class="product" src="images/product.jpg" alt="Product 1" />
+      <img class="product" src="images/product.jpg" alt="Product 2" />
+      <img class="product" src="images/product.jpg" alt="Product 3" />
+
+      <footer>
+        <span>Copyright Notice</span>
+      </footer>
+    </div>
+  </body>
+</html>

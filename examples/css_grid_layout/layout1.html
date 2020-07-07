@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid Example 1</title>
+    <style>
+      .bg-light {
+        background: silver;
+      }
+      html {
+        font: 90% arial, helvetica, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px auto 1fr 100px;
+        grid-template-areas:
+          'logo'
+          'nav'
+          'main'
+          'foot';
+        grid-gap: 0.5rem;
+        min-height: 100vh;
+      }
+      .logo {
+        grid-area: logo;
+        align-self: stretch;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .nav {
+        grid-area: nav;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .nav > * {
+        padding: 0.5rem;
+        min-width: 100px;
+        border: 1px solid black;
+      }
+      .main {
+        grid-area: main;
+        align-self: stretch;
+      }
+      .foot {
+        grid-area: foot;
+        align-self: stretch;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .product-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 100px);
+        grid-gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .product {
+        background: silver;
+      }
+      /* .product {
+        background: silver;
+        width: 200px;
+        height: 100px;
+        margin: 0.5rem;
+        flex-grow: 0;
+        flex-shrink: 1;
+      } */
+
+      /* @media only screen and (min-width: 960px) {
+        .product {
+          width: 400px;
+          height: 200px;
+        }
+      } */
+
+      @media only screen and (min-width: 600px) {
+        html {
+          font-size: 100%;
+        }
+        body {
+          grid-template-columns: 200px 1fr;
+          grid-template-rows: 100px 1fr 100px;
+          grid-template-areas:
+            'logo nav'
+            'main main'
+            'foot foot';
+        }
+        .nav {
+          align-self: center;
+          justify-self: end;
+          flex-direction: row;
+          margin: 1rem;
+          margin-right: 0;
+        }
+        .nav > * {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo bg-light">
+      <span>Company Logo</span>
+    </div>
+
+    <nav class="nav bg-light">
+      <span>Item 1</span>
+      <span>Item 2</span>
+      <span>Item 3</span>
+      <span>Item 4</span>
+    </nav>
+
+    <main class="main">
+      <h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta quisquam eum nihil atque qui autem provident
+        incidunt fuga eveniet neque sunt aspernatur repellendus, numquam laborum ipsa. Consectetur autem iusto
+        voluptatibus?
+      </h1>
+
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo hic maxime quia. Magni culpa eaque incidunt
+        quisquam molestiae, beatae cum asperiores, provident ab consequatur nihil. Delectus perspiciatis dolore saepe
+        id.
+      </p>
+
+      <div class="product-container">
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+      </div>
+    </main>
+
+    <footer class="foot bg-light">
+      <span>Copyright Notice</span>
+    </footer>
+  </body>
+</html>
