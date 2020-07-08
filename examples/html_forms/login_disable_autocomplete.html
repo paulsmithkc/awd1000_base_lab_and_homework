@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
+    <title>Login w/ Autocomplete Disabled</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -28,62 +28,43 @@
   </head>
   <body>
     <div class="container">
-      <h1>Contact Us</h1>
-      <form class="form needs-validation" method="POST" action="/send_contact_form" novalidate>
+      <h1>Login (No Autocomplete)</h1>
+      <form class="form needs-validation" method="POST" action="/api/login" novalidate autocomplete="off">
+        <!-- Fake Login Form -->
+        <input type="text" style="width: 1px; height: 1px; opacity: 0;" />
+        <input type="password" style="width: 1px; height: 1px; opacity: 0;" />
+
         <div class="form-group">
-          <label for="contact-us-email">Email</label>
+          <label for="login-username">User Name</label>
           <input
             class="form-control"
-            type="email"
-            id="contact-us-email"
-            name="email"
-            placeholder="Please enter your email address."
-            required
-          />
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please enter a valid email address.
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="contact-us-subject">Subject</label>
-          <select class="form-control" id="contact-us-subject" name="subject" required>
-            <option value="">Select...</option>
-            <option value="1">Job Opportunities</option>
-            <option value="2">Information</option>
-            <option value="3">Legal</option>
-          </select>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please select a subject.
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="contact-us-message">Message</label>
-          <textarea
-            class="form-control"
             type="text"
-            id="contact-us-message"
-            name="message"
+            id="login-username"
+            name="login-username"
             required
-            cols="40"
-            rows="5"
-          ></textarea>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
+            autocomplete="username"
+          />
           <div class="invalid-feedback">
-            Please enter a message.
+            Please enter your user name.
           </div>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary" type="submit">Send</button>
-          <!-- <button type="reset">Reset</button> -->
-          <!-- <button class="btn btn-secondary" type="button">Cancel</button> -->
+          <label for="login-password">Password</label>
+          <input
+            class="form-control"
+            type="password"
+            id="login-password"
+            name="login-password"
+            required
+            autocomplete="new-password"
+          />
+          <div class="invalid-feedback">
+            Please enter your password.
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Login</button>
+          <a class="text-muted" href="/reset_password">Need help with your password?</a>
         </div>
       </form>
     </div>
@@ -91,8 +72,10 @@
     <script>
       $(() => {
         $('.needs-validation').submit((e) => {
-          e.preventDefault();
-          e.stopPropagation();
+          if (e.target.checkValidity() === false) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
           $(e.target).addClass('was-validated');
         });
       });
