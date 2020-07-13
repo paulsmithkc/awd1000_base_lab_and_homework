@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Example 6</title>
+    <script>
+      'use strict';
+
+      const name = 'Fred';
+      const age = 900;
+      const home = null;
+      const salary = NaN;
+      const style = undefined;
+      const hasHair = true;
+      const hasGlasses = false;
+      const alias = '';
+      const pets = [ 'dogs', 'cats' ];
+
+      if (home != null) {
+        console.log(`${name} has a home`);
+      } else {
+        console.log(`${name} is homeless`);
+      }
+
+      if (isNaN(salary)) {
+        console.log(`${name}'s' salary is unknown`);
+      }
+
+      if (style == undefined) {
+        console.log(`${name}'s style has not been determined'`);
+      }
+
+      if (hasHair == true) {
+        console.log(`${name} has hair`);
+      }
+
+      if (alias == '') {
+        console.log(`${name} does not have an alias`);
+      }
+
+      // using falsy and truthy
+      // falsy: undefined, NaN, null, 0, false, ''
+      // truthy: everything else (includes ' ', [])
+
+      if (age && age < 200) {
+        console.log('valid age');
+      } else {
+        console.log('invalid age');
+      }
+
+      if (pets && pets.length > 0) {
+        console.log('has pets');
+      } else {
+        console.log('does not have pets');
+      }
+      
+      if (!alias) {
+        console.log('does not have alias');
+      }
+      const hasAlias = !!alias;
+      console.log(hasAlias);
+
+      if (age == '900') {
+        console.log('==');
+      }
+      if (age > '100') {
+        console.log('>');
+      }
+      if (age === '900') {
+        console.log('===');
+      }
+
+      console.log(name ? 'has name' : 'does not have name');
+      console.log(
+        home ? 'home' :
+        salary ? 'salary' :
+        'neither'
+      );
+      console.log(salary ? salary : 7);
+      console.log(salary || 7);
+
+      function serverNameA(host = 'localhost', port = 3000) {
+        console.log(`${host}:${port}`);
+      }
+
+      function serverNameB(host, port) {
+        console.log(`${host || 'localhost'}:${port || 3000}`);
+      }
+
+      serverNameA('ranken.edu', '80');
+      serverNameA('mydomain.com');
+      serverNameA();
+      serverNameA(null, null);
+      serverNameB(null, null);
+
+    </script>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+  </body>
+</html>

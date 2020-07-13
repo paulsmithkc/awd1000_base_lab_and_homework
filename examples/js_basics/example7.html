@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Example 7</title>
+    <script>
+      'use strict';
+
+      // loop over i=1..10, print i
+      console.log('loop over i=1..10, print i');
+      for (let i = 1; i <= 10; ++i) {
+        console.log(i);
+      }
+
+      // loop over i=1..10, print i squared
+      console.log('loop over i=1..10, print i squared');
+      for (let i = 1; i <= 10; ++i) {
+        const square = i * i;
+        // 200 lines...
+        // square = i + i; // causes error
+        console.log(square);
+      }
+
+      // loop over i=1..10, compute the 
+      console.log('loop over i=1..10, compute sum');
+      let sum = 0;
+      for (let i = 1; i <= 10; ++i) {
+        sum += i;
+        console.log(sum);
+      }
+
+      // loop over an array, print each pet
+      console.log('loop over an array');
+      const pets = [ 'cat', 'dog', 3, 4, true ];
+      for (let i = 0; i < pets.length; ++i) {
+        const currentPet = pets[i];
+        console.log(currentPet);
+      }
+      for (const key in pets) {
+        console.log(pets[key]);
+      }
+      for (const value of pets) {  // preferred
+        console.log(value);
+      }
+      
+      // pets.forEach(function (e, i) {
+      //   console.log(`${i}: ${e}`);
+      // });
+      pets.forEach((e, i) => console.log(`${i}: ${e}`));
+
+      // loop over an object, print each property
+      console.log('loop over an object');
+      const employee = {
+        name: 'Fred',
+        age: 900,
+        salary: 7,
+        pets: [ 'dog', 'cat', 'bird' ]
+      };
+      for (const key in employee) {  // preferred
+        console.log(`${key}: ${employee[key]}`);
+      }
+      // for (const value of employee) {
+      //   console.log(value);
+      // }
+
+    </script>
+  </head>
+  <body></body>
+</html>

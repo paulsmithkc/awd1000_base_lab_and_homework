@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Example 4</title>
+    <script>
+      'use strict';
+
+      var x = 3;
+      x = 4;
+      console.log(x);
+      console.log(window.x);
+
+      const y = x * x;
+      //y = 10; // causes error
+      console.log(y);
+      console.log(window.y);
+
+      let z = 5;
+      z = 11;
+      console.log(z);
+      console.log(window.z);
+    </script>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Language</th>
+          <th>Keywords</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>C++</th>
+          <td>
+            <dl>
+              <dt>const</dt>
+              <dd>
+                variable cannot be modified
+                <br />object/array is immutable
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <th>C#</th>
+          <td>
+            <dl>
+              <dt>const</dt>
+              <dd>
+                value cannot be modified
+                <br/>variable cannot be an object/array
+              </dd>
+              <dt>readonly</dt>
+              <dd>
+                value/reference cannot be modified
+                <br/>variable can be object/array
+                <br/>object/array is not immutable
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <th>Java</th>
+          <td>
+            <dl>
+              <dt>final</dt>
+              <dd>
+                value/reference cannot be modified
+                <br/>variable can be object/array
+                <br/>object/array is not immutable
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <th>JavaScript</th>
+          <td>
+            <dl>
+              <dt>const</dt>
+              <dd>
+                value/reference cannot be modified
+                <br/>variable can be object/array
+                <br/>object/array is not immutable
+              </dd>
+              <dt>let</dt>
+              <dd>
+                value/reference can be modified
+              </dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

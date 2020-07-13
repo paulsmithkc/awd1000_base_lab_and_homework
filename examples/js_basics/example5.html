@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Example 5</title>
+    <script>
+      'use strict';
+
+      function foo() {
+        console.log('Foo');
+      }
+      function addTwo(x, y) {
+        return x + y;
+      }
+      function addTwoSafely(x, y) {
+        return parseFloat(x) + parseFloat(y);
+      }
+      function echo(x) {
+        return x;
+      }
+      function varIsFunctionScoped(x) {
+        if (x > 3) {
+          var y = 2;
+        }
+        console.log(`y = ${y}`);
+      }
+      function letIsFunctionScoped(x) {
+        if (x > 3) {
+          let y = 2;
+        }
+        console.log(`y = ${y}`);
+      }
+
+      foo();
+      console.log(addTwo(1, 2));
+      console.log(addTwo('hello', 2));
+      console.log(addTwoSafely('hello', 2));
+      
+      console.log(addTwo());
+      console.log(addTwo(5));
+      console.log(addTwo('hello '));
+      console.log(echo(5));
+      console.log(echo());
+
+      varIsFunctionScoped(5);
+      varIsFunctionScoped(2);
+      //letIsFunctionScoped(5);
+
+      const entry = '2e3'; // try hello, hello2, 2hello, 2e3, 2e32
+      const parsedEntry = parseFloat(entry);
+      if (isNaN(parsedEntry)) {
+        console.log(`${entry} is not a number`);
+      } else {
+        console.log(parsedEntry);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+
+    <h3>functions in C#</h3>
+    <code>
+      <pre>
+      void foo() {
+        Console.WriteLine("Foo");
+      }
+      int addTwo(int x, int y) {
+        return x + y;
+      }
+    </pre
+      >
+    </code>
+  </body>
+</html>
