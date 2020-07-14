@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">	
+  <head>
+    <meta charset="UTF-8" />
     <title>Average Test Scores</title>
     <script>
-        var entry;
-        var average;
-        var total = 0;
-		
-        //get 3 scores from user and add them together
-        entry = prompt("Enter test score");
-        entry = parseInt(entry);
-		var score1 = entry;
-		total = total + score1;
-		
-		entry = prompt("Enter test score");
-        entry = parseInt(entry);
-		var score2 = entry;
-		total = total + score2;
-		
-		entry = prompt("Enter test score");
-        entry = parseInt(entry);
-		var score3 = entry;
-		total = total + score3;
+      let total = 0;
 
-        //calculate the average
-        average = parseInt(total/3);
+      //get 3 scores from user and add them together
+      const score1 = parseInt(prompt('Enter test score'));
+      total += score1;
+
+      const score2 = parseInt(prompt('Enter test score'));
+      total += score2;
+
+      const score3 = parseInt(prompt('Enter test score'));
+      total += score3;
+
+      //calculate the average
+      const average = (total / 3).toFixed(1);
     </script>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>The Test Scores App</h1>
     <script>
-		document.write("<h1>The Test Scores App</h1>");
-		document.write("Score 1 = " + score1 + "<br>" +
-		    "Score 2 = " + score2 + "<br>" +
-		    "Score 3 = " + score3 + "<br><br>" +
-			"Average score = " + average + "<br><br>");
+      document.write(
+        `Score 1 = ${score1}<br>
+         Score 2 = ${score2}<br>
+         Score 3 = ${score3}<br><br>
+         Average score = ${average}<br><br>`
+      );
     </script>
-    Thanks for using the Test Scores application!
-</body>
+    <p>Thanks for using the Test Scores application!</p>
+  </body>
 </html>
