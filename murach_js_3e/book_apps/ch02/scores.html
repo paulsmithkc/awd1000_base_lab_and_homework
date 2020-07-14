@@ -17,7 +17,7 @@
       total += score3;
 
       //calculate the average
-      const average = (total / 3).toFixed(1);
+      const average = (total / 3);
     </script>
   </head>
   <body>
@@ -27,7 +27,7 @@
         `Score 1 = ${score1}<br>
          Score 2 = ${score2}<br>
          Score 3 = ${score3}<br><br>
-         Average score = ${average}<br><br>`
+         Average score = ${average.toFixed(1)}<br><br>`
       );
     </script>
     <p>Thanks for using the Test Scores application!</p>
