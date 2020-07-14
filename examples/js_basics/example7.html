@@ -31,19 +31,27 @@
       }
 
       // loop over an array, print each pet
-      console.log('loop over an array');
       const pets = [ 'cat', 'dog', 3, 4, true ];
+      //pets.push('new item');
+      //delete pets[1];
+      //pets[-1] = 'extra item';
+      //pets[10] = 'extra item';
+
+      console.log('loop over an array, with for');
       for (let i = 0; i < pets.length; ++i) {
         const currentPet = pets[i];
-        console.log(currentPet);
+        console.log(`${i}: ${currentPet}`);
       }
+      console.log('loop over an array, with for in');
       for (const key in pets) {
-        console.log(pets[key]);
+        console.log(`${key}: ${pets[key]}`);
       }
+      console.log('loop over an array, with for of');
       for (const value of pets) {  // preferred
         console.log(value);
       }
       
+      console.log('loop over an array, with forEach');
       // pets.forEach(function (e, i) {
       //   console.log(`${i}: ${e}`);
       // });

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Example 9</title>
+    <script>
+      function doThing(f) {
+        setTimeout(() => f(), 2000);
+      }
+      function dog() {
+        console.log('bark');
+      }
+
+      doThing(dog);
+      //doThing(dog());
+      doThing(function () {
+        console.log('moo');
+      });
+      doThing(() => console.log('chirp'));
+
+      doThing(() => {
+        console.log('crash');
+        doThing(() => console.log('ouch'));
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
