@@ -12,15 +12,34 @@ main {
 h1 {
   color: blue;
 }
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 label {
-  float: left;
-  width: 11em;
+  display: inline-block;
+  width: 11rem;
+  margin-bottom: 0.5rem;
   text-align: right;
 }
+.form-control, .btn {
+  display: inline-block;
+  box-sizing: border-box;
+  align-self: stretch;
+  width: 11rem;
+  height: 1.5rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+}
 .form-control {
-  margin-left: 1em;
-  margin-bottom: 0.5em;
+  border-radius: 0.25rem;
+}
+.btn {
+  height: 2rem;
 }
 .text-danger {
   color: red;
+  margin-left: 0.5rem;
 }
