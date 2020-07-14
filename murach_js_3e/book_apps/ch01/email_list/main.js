@@ -1,34 +1,49 @@
-var $ = function(id) {
-    return document.getElementById(id);
-};
+//const $ = (id) => document.getElementById(id);
 
-var joinList = function() {
-	var emailAddress1 = $("email_address1").value;
-	var emailAddress2 = $("email_address2").value;
-	var isValid = true;
-	
-	if (emailAddress1 === "") { 
-		$("email_address1_error").firstChild.nodeValue = "This field is required.";
-		isValid = false;
-	} else { $("email_address1_error").firstChild.nodeValue = ""; } 
+function joinList(e) {
+  const emailAddress1Input = document.getElementById('email_address1');
+  const emailAddress2Input = document.getElementById('email_address2');
+  const firstNameInput = document.getElementById('first_name');
+  const emailAddress1Error = document.getElementById('email_address1_error');
+  const emailAddress2Error = document.getElementById('email_address2_error');
+  const firstNameError = document.getElementById('first_name_error');
 
-	if (emailAddress1 !== emailAddress2) { 
-		$("email_address2_error").firstChild.nodeValue = "This entry must equal first entry.";
-		isValid = false;
-	} else { $("email_address2_error").firstChild.nodeValue = ""; }     
-        
-	if ($("first_name").value === "") {
-		$("first_name_error").firstChild.nodeValue = 
-                        "This field is required.";
-		isValid = false;
-	} else { $("first_name_error").firstChild.nodeValue = ""; }  
-	
-	if (isValid) {
-		$("email_form").submit(); 
-	}
-};
+  const emailAddress1 = emailAddress1Input.value;
+  const emailAddress2 = emailAddress2Input.value;
+  const firstName = firstNameInput.value;
+  let isValid = true;
 
-window.onload = function() {
-    $("join_list").onclick = joinList;
-    $("email_address1").focus();
+	// validate the first email address
+  if (!emailAddress1) {
+    emailAddress1Error.innerHTML = 'This field is required.';
+    isValid = false;
+  } else {
+    emailAddress1Error.innerHTML = '';
+  }
+
+	// validate the second email address
+  if (emailAddress1 != emailAddress2) {
+    emailAddress2Error.innerHTML = 'This entry must equal first entry.';
+    isValid = false;
+  } else {
+    emailAddress2Error.innerHTML = '';
+  }
+
+	// validate the first name
+  if (!firstName) {
+    firstNameError.innerHTML = 'This field is required.';
+    isValid = false;
+  } else {
+    firstNameError.innerHTML = '';
+  }
+
+  // submit the form if all entries are valid
+  if (!isValid) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+}
+
+window.onload = function () {
+  document.getElementById('email_form').onsubmit = joinList;
 };
