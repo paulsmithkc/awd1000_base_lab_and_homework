@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">	
+  <head>
+    <meta charset="UTF-8" />
     <title>Calculate MPG</title>
-    <link rel="stylesheet" href="mpg.css">
+    <link rel="stylesheet" href="main.css" />
     <script>
-        "use strict";
-        var $ = function(id) {
-            return document.getElementById(id);
-        };
-        var calculateMpg = function(miles, gallons) {
-			var mpg = (miles / gallons);
-			mpg = mpg.toFixed(1);
-			return mpg;
-		};
-		var processEntries = function() {
-            var miles = parseFloat($("miles").value);
-            var gallons = parseFloat($("gallons").value);
+      'use strict';
 
-            if (isNaN(miles) || isNaN(gallons)) {
-                alert("Both entries must be numeric");
-            } else if (miles <= 0 || gallons <= 0) {
-            	alert("Both entries must be greater than zero");
-            } else {
-                $("mpg").value = calculateMpg(miles, gallons);
-                $("miles").focus();
-            }
-        };
-		window.onload = function() {
-            $("calculate").onclick = processEntries;
-        };
+      //const $ = (id) => document.getElementById(id);
+      const calculateMpg = (miles, gallons) => (miles / gallons).toFixed(1);
+
+      function processEntries(e) {
+        const milesInput = document.getElementById('miles');
+        const gallonsInput = document.getElementById('gallons');
+        const mpgOutput = document.getElementById('mpg');
+
+        const miles = parseFloat(milesInput.value);
+        const gallons = parseFloat(gallonsInput.value);
+
+        if (!miles || !gallons) {
+          alert('Both entries must be numeric');
+        } else if (miles <= 0 || gallons <= 0) {
+          alert('Both entries must be greater than zero');
+        } else {
+          mpgOutput.value = calculateMpg(miles, gallons);
+          milesInput.focus();
+        }
+      }
+      window.onload = function () {
+        document.getElementById('calculate').onclick = processEntries;
+      };
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <h1>Calculate Miles Per Gallon</h1>
+      <h1>Calculate Miles Per Gallon</h1>
+      <div class="form-group">
         <label for="miles">Miles Driven:</label>
-		<input type="text" id="miles"><br>
+        <input type="text" id="miles" name="miles" autofocus />
+      </div class="form-group">
+      <div class="form-group">
         <label for="gallons">Gallons of Gas Used:</label>
-        <input type="text" id="gallons"><br>
-        <label for="mpg">Miles Per Gallon</label>
-        <input type="text" id="mpg" disabled><br>
-        <label>&nbsp;</label>
-        <input type="button" id="calculate" value="Calculate MPG"><br>
+        <input type="text" id="gallons" name="gallons" />
+      </div>
+      <div class="form-group">
+        <label for="mpg">Miles Per Gallon:</label>
+        <output id="mpg"></output>
+      </div>
+      <div class="form-group">
+        <button type="button" id="calculate">Calculate MPG</button>
+      </div>
     </main>
-</body>
+  </body>
 </html>
