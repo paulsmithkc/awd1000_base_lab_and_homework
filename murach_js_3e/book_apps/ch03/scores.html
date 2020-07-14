@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">	
-	<title>Average Test Scores</title>
-	<script>
-		var total = 0;
-		var entryCount = 0;
-		var entry;
-		
-		do {
-			entry = prompt("Enter test score\n" +
-			               "Or enter 999 to end entries", 999);
-			entry = parseInt(entry);
-			if (entry >= 0 && entry <= 100) 
-			{
-				total = total + entry;	
-				entryCount++;
-			}
-			else if (entry != 999){
-				alert("Entry must by a valid number from 0 through 100\n" +
-					  "Or enter 999 to end entries");					
-			}
-		}
-		while (entry != 999);
-			
-		var average = total / entryCount;
-		average = parseInt(average);
-		alert("Average score is " + average);
-	</script>
-</head>
-<body>
-<section>
-    <h1>This page is displayed after the JavaScript is executed</h1>
-</section>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Average Test Scores</title>
+    <script>
+      let total = 0;
+      let entryCount = 0;
+      let entry = 999;
+
+      // use a do-while loop to get scores from user
+      do {
+        entry = parseInt(prompt('Enter test score\nOr enter 999 to end entries', 999));
+        if (entry && entry >= 0 && entry <= 100) {
+          total += entry;
+          entryCount++;
+        } else if (entry != 999) {
+          alert('Entry must by a valid number from 0 through 100\nOr enter 999 to end entries');
+        }
+      } while (entry != 999);
+
+      // calculate the average and display
+      const average = total / entryCount;
+      alert('Average score is ' + average.toFixed(1));
+    </script>
+  </head>
+  <body>
+    <!-- Will show after JavaScript has run -->
+    <h1>Thanks for using the Test Scores application!</h1>
+  </body>
 </html>
