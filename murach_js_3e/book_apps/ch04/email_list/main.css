@@ -15,7 +15,7 @@ h1 {
 .form-group {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 label {
   display: inline-block;
@@ -23,9 +23,7 @@ label {
   margin-bottom: 0.5rem;
   text-align: right;
 }
-input,
-output,
-button {
+.form-control, .btn {
   display: inline-block;
   box-sizing: border-box;
   align-self: stretch;
@@ -35,9 +33,6 @@ button {
   margin-bottom: 0.5rem;
   padding: 0.25rem;
 }
-input, output {
+.form-control {
   border-radius: 0.25rem;
-}
-output {
-  background-color: #eee;
 }
