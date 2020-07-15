@@ -1,42 +1,70 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Account Registration</title>
-<link rel="stylesheet" type="text/css" href="register.css">
-<script type="text/javascript" src="register.js"></script>
-</head>
-
-<body>
-<main>
-    <h1>Register for an Account</h1>
-    <form action="register_account.html" method="get"
-        name="registration_form" id="registration_form">
-    
-        <label for="email_address">E-Mail:</label>
-            <input type="text" name="email_address" id="email_address">
-            <span>*</span><br>
-        <label for="phone">Mobile Phone:</label>
-            <input type="text" name="phone" id="phone">
-            <span>*</span><br>
-        <label for="country">Country:</label>
-            <select name="country" id="country">
-            	<option value="">Select a country</option>
-                <option>USA</option>
-                <option>Canada</option>
-                <option>Mexico</option>
-            </select>
-            <span>*</span><br>
-        <label>Contact me by:</label>         
-            <input type="radio" name="contact" id="text" value="text" checked>Text
-            <input type="radio" name="contact" id="email" value="email">Email
-            <input type="radio" name="contact" id="none" value="none">Don't contact me
-        <br>
-        <label>Terms of Service:</label>
-            <input type="checkbox" name="terms" id="terms" value="yes">I accept
-            <span>*</span><br>
-
-        <input type="button" id="register" value="Register">
-        <input type="button" id="reset_form" value="Reset">
-    </form>
-</main>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Registration</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Register for an Account</h1>
+      <form class="form" action="register_account.html" method="get" name="registration_form" id="registration_form">
+        <div class="form-group">
+          <label for="email_address">E-Mail:</label>
+          <input type="text" id="email_address" name="email_address" class="form-control" autofocus />
+          <div id="email_address_error" class="text-danger"></div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Mobile Phone:</label>
+          <input type="text" id="phone" name="phone" class="form-control" />
+          <div id="phone_error" class="text-danger"></div>
+        </div>
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <select id="country" name="country" class="form-control">
+            <option value="">Select a country</option>
+            <option>USA</option>
+            <option>Canada</option>
+            <option>Mexico</option>
+          </select>
+          <div id="country_error" class="text-danger"></div>
+        </div>
+        <div class="form-group d-flex align-items-center">
+          <span class="mr-3">Contact me by:</span>
+          <div class="form-check form-check-inline">
+            <input type="radio" id="contact_text" name="contact" value="text" class="form-check-input" checked />
+            <label class="form-check-label" for="contact_text">Text</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" id="contact_email" name="contact" value="email" class="form-check-input" />
+            <label class="form-check-label" for="contact_email">Email</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" id="contact_none" name="contact" value="none" class="form-check-input" />
+            <label class="form-check-label" for="contact_none">Don't contact me</label>
+          </div>
+          <div id="contact_error" class="text-danger"></div>
+        </div>
+        <div class="form-group d-flex align-items-center">
+          <span class="mr-3">Terms of Service:</span>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" id="terms" name="terms" value="yes" class="form-check-input" />
+            <label class="form-check-label" for="terms">I accept</label>
+          </div>
+          <div id="terms_error" class="text-danger"></div>
+        </div>
+        <div class="form-group">
+          <button type="submit" id="register" value="Register" class="btn btn-primary">Register</button>
+          <button type="reset" id="reset_form" value="Reset" class="btn btn-danger">Reset</button>
+        </div>
+      </form>
+    </main>
+    <script src="register.js"></script>
+  </body>
 </html>
