@@ -8,7 +8,10 @@ function processEntries(e) {
   const phone = document.getElementById('phone').value;
   const country = document.getElementById('country').value;
   const terms = document.getElementById('terms').checked;
-  //const contact = $('contact_email').checked ? 'Email' : $('contact_none').checked ? 'None' : 'Text';
+  let contact = 
+    document.getElementById('contact_email').checked ? 'Email' : 
+    document.getElementById('contact_none').checked ? 'None' : 
+    'Text';
   let isValid = true;
 
   // check user entries for validity

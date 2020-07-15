@@ -1,6 +1,6 @@
 'use strict';
 
-const $ = (id) => document.getElementById(id);
+//const $ = (id) => document.getElementById(id);
 
 function processEntries(e) {
   const required = '<span class="text-danger">Required field</span>';
@@ -9,7 +9,10 @@ function processEntries(e) {
   let phone = document.getElementById('phone').value;
   let country = document.getElementById('country').value;
   let terms = document.getElementById('terms').checked;
-  let contact = $('contact_email').checked ? 'Email' : $('contact_none').checked ? 'None' : 'Text';
+  let contact = 
+    document.getElementById('contact_email').checked ? 'Email' : 
+    document.getElementById('contact_none').checked ? 'None' : 
+    'Text';
 
   if (!email) {
     email = required;
@@ -30,8 +33,9 @@ function processEntries(e) {
 
   if (!isValid) {
     e.preventDefault();
-    $('registration_header').innerHTML = 'Please review your entries and complete all required fields';
-    $('registration_info').innerHTML = `
+    document.getElementById('registration_header').innerHTML =
+      'Please review your entries and complete all required fields';
+    document.getElementById('registration_info').innerHTML = `
         <colgroup>
           <col style="width: 7em;">
           <col style="width: auto;">
@@ -45,15 +49,15 @@ function processEntries(e) {
         </tbody>
         `;
   } else {
-    $('registration_header').innerHTML = '';
-    $('registration_info').innerHTML = '';
+    document.getElementById('registration_header').innerHTML = '';
+    document.getElementById('registration_info').innerHTML = '';
   }
 }
 
 function resetForm(e) {
-  $('registration_header').innerHTML = '';
-  $('registration_info').innerHTML = '';
-  $('email_address').focus();
+  document.getElementById('registration_header').innerHTML = '';
+  document.getElementById('registration_info').innerHTML = '';
+  document.getElementById('email_address').focus();
 }
 
 window.onload = function () {
