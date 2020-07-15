@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>Join Email List</title>
-    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <main>
+    <main class="container">
       <h1>Please join our email list</h1>
       <form id="email_form" name="email_form" action="join.html" method="get">
         <div class="form-group">
@@ -22,8 +27,7 @@
           <input type="text" id="first_name" name="first_name" class="form-control" />
         </div>
         <div class="form-group">
-          <label>&nbsp;</label>
-          <button type="submit" id="join_list" class="btn">Join our List</button>
+          <button type="submit" id="join_list" class="btn btn-primary">Join our List</button>
         </div>
       </form>
     </main>
