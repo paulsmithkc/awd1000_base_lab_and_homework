@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widgets Example</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script defer src="/js/jquery-3.5.1.min.js"></script>
+    <script defer src="/js/jquery-ui.min.js"></script>
+    <script defer src="/js/bootstrap.min.js"></script>
+    <script defer src="/js/main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Shake Effect</h2>
+      <div class="shake">Shake Me!</div>
+      <h2>Autocomplete w/ Array</h2>
+      <form id="autocomplete1">
+        <input id="query1" name="query" type="search" />
+        <button type="submit">Search</button>
+        <button type="reset">Clear</button>
+      </form>
+      <h2>Autocomplete w/ Remote Data Source</h2>
+      <form id="autocomplete2">
+        <input id="query2" name="query" type="search" />
+        <button type="submit">Search</button>
+        <button type="reset">Clear</button>
+      </form>
+      <h2>Datepicker w/ HTML5</h2>
+      <div>
+        <input id="datepicker1" type="date" />
+      </div>
+      <h2>Datepicker w/ jQuery UI</h2>
+      <div>
+        <input id="datepicker2" type="text" />
+      </div>
+      <h2>Slider w/ HTML5</h2>
+      <div>
+        <input id="slider1" type="range" />
+      </div>
+      <h2>Slider w/ jQuery UI</h2>
+      <div>
+        <div id="slider2"></div>
+      </div>
+      <h2>Bootstrap Accordion</h2>
+      <div id="bootstrapAccordion" class="card">
+        <div class="card-header">
+          <h3 data-toggle="collapse" data-target="#tab1">Tab 1</h3>
+        </div>
+        <div id="tab1" class="collapse card-body" data-parent="#bootstrapAccordion">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit provident quidem sint consequuntur ipsa? Eum
+          quibusdam voluptas aliquid delectus neque error animi ex consectetur nemo? Optio iusto delectus aliquid
+          veniam?
+        </div>
+        <div class="card-header">
+          <h3 data-toggle="collapse" data-target="#tab2">Tab 2</h3>
+        </div>
+        <div id="tab2" class="collapse card-body" data-parent="#bootstrapAccordion">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit provident quidem sint consequuntur ipsa? Eum
+          quibusdam voluptas aliquid delectus neque error animi ex consectetur nemo? Optio iusto delectus aliquid
+          veniam?
+        </div>
+        <div class="card-header">
+          <h3 data-toggle="collapse" data-target="#tab3">Tab 3</h3>
+        </div>
+        <div id="tab3" class="collapse card-body" data-parent="#bootstrapAccordion">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit provident quidem sint consequuntur ipsa? Eum
+          quibusdam voluptas aliquid delectus neque error animi ex consectetur nemo? Optio iusto delectus aliquid
+          veniam?
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
