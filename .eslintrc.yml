@@ -6,4 +6,5 @@ extends:
   - airbnb-base
 parserOptions:
   ecmaVersion: 12
-rules: {}
+rules:
+  linebreak-style: "windows"
