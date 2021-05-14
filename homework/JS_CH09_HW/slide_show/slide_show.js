@@ -1,28 +1,25 @@
-$(document).ready(function() {
-	// create an array of the slide images
-	var image, imageCache = [];
-	$("#slides img").each(function() {	
-		image = new Image();
-        image.src = $(this).attr("src");
-        image.title = $(this).attr("alt");
-        imageCache[imageCache.length] = image;
-   	});
-	
-	// Start slide show
-	var imageCounter = 0;
-	var nextImage, nextCaption;
-    var  timer = setInterval(
-        function () {
-        	$("#caption, #slide").fadeOut(1000,
-				function() {
-					imageCounter = (imageCounter + 1) % imageCache.length;
-		        	nextImage = imageCache[imageCounter];
-		        	nextCaption = nextImage.title;
-			    	$("#slide").attr("src", nextImage.src).fadeIn(1000);
-				    $("#caption").text(nextCaption).fadeIn(1000);		
-				}        	
-        	);
-        },
-    	3000);
-    
+'use strict';
+
+$(() => {
+  // create an array of the slide images
+  const imageCache = [];
+
+  $('#slides img').each((index, element) => {
+    const image = new Image();
+    image.src = $(element).attr('src');
+    image.title = $(element).attr('alt');
+    imageCache.push(image);
+  });
+
+  // Start slide show
+  let imageCounter = 0;
+  setInterval(() => {
+    $('#caption, #slide').fadeOut(1000, () => {
+      imageCounter = (imageCounter + 1) % imageCache.length;
+      const nextImage = imageCache[imageCounter];
+      const nextCaption = nextImage.title;
+      $('#slide').attr('src', nextImage.src).fadeIn(1000);
+      $('#caption').text(nextCaption).fadeIn(1000);
+    });
+  }, 3000);
 });

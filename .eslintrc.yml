@@ -6,8 +6,18 @@ extends:
   - airbnb-base
 parserOptions:
   ecmaVersion: 12
+  sourceType: "script"
+ecmaFeatures:
+  impliedStrict: false
 rules:
-  linebreak-style: ["warn", "unix"]
-  indent: ["warn", 2]
+  linebreak-style: ["warn", "windows"]
+  indent: ["warn", 2, {SwitchCase: 1}]
   strict: ["warn", "global"]
+  spaced-comment: ["warn"]
+  eol-last: ["warn"]
   no-alert: ["warn"]
+  no-extra-semi: ["warn"]
+  no-trailing-spaces: ["warn"]
+  no-nested-ternary: 0
+  no-plusplus: 0
+  padded-blocks: 0

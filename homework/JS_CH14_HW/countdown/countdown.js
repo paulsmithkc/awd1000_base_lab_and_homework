@@ -1,68 +1,64 @@
-"use strict";
-$(document).ready(function() {
-    var calculateDays = function( date ) {
-        var today = new Date();
-        var oneDay = 24*60*60*1000; // hours * minutes * seconds * milliseconds    
-        var days = ( date.getTime() - today.getTime() ) / oneDay;
-        return Math.ceil(days);
-    };
-    
-    $("#countdown").click(function() {
-        var event = $("#event").val();
-        var dt = $("#date").val();  
-        var message = $("#message"); 
-        var date, days;
+'use strict';
 
-        // clear previous message
-        message.text( " " );
+function calculateDays(date) {
+  const today = new Date();
+  const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+  const days = (date.getTime() - today.getTime()) / oneDay;
+  return Math.ceil(days);
+}
 
-        //make sure task and due date are entered and correct
-        if (event.length === 0 || dt.length === 0) {
-            message.text( "Please enter both a name and a date." );
-        } else {
-            //make sure due date string has slashes and a 4-digit year
-            var index = dt.indexOf("/");
-            if (index === -1) { 
-                message.text( "Please enter the date in MM/DD/YYYY format." );
-            } else {
-                // check for the second slash
-                if (dt.indexOf("/", index + 1) === -1) {
-                    message.text( "Please enter the date in MM/DD/YYYY format." );
-                }
-            }
+$(() => {
 
-            var year = dt.substring(dt.length - 4); 
-            if (isNaN(year)) {
-                message.text( "Please enter the date in MM/DD/YYYY format." );
-            }  
+  $('#countdown').click(() => {
+    const event = $('#event').val();
+    const dt = $('#date').val();
+    const message = $('#message');
+    let date = null;
 
-            //convert due date string to Date object and make sure date is valid
-            date = new Date(dt);
-            if (date === "Invalid Date") {
-                message.text( "Please enter the date in MM/DD/YYYY format." );
-            }
-        }  
+    // clear previous message
+    message.text('');
 
-        // if no error messages, calculate and display days until event
-        if (message.text() === " ") {
+    // make sure task and due date are entered and correct
+    if (event.length === 0 || dt.length === 0) {
+      message.text('Please enter both a name and a date.');
+    } else {
+      // make sure due date string has two slashes
+      const index = dt.indexOf('/');
+      if (index === -1) {
+        message.text('Please enter the date in MM/DD/YYYY format.');
+      } else if (dt.indexOf('/', index + 1) === -1) {
+        message.text('Please enter the date in MM/DD/YYYY format.');
+      }
 
-            //calculate days
-            days = calculateDays(date);
+      // make sure due date string ends with a 4-digit year
+      const year = parseInt(dt.substring(dt.length - 4), 10);
+      if (!year) {
+        message.text('Please enter the date in MM/DD/YYYY format.');
+      }
 
-            //create and display message 
-            if (days === 0) {
-                message.text( "Hooray! Today is " + event + "!" );
-            }
-            if (days < 0) {
-                event = event.substring(0,1).toUpperCase() + event.substring(1); // capitalize event
-                message.text( event + " happened " + Math.abs(days) + " day(s) ago." );        
-            }
-            if (days > 0) {
-                message.text( days + " day(s) until " + event + "!" );
-            }
-        }
-    }); // end click()
-    
-    // set focus on initial page load
-    $("#event").focus();
+      // convert due date string to Date object
+      date = new Date(dt);
+    }
+
+    // if no error messages, calculate and display days until event
+    if (message.text() === ' ') {
+      // calculate days
+      const days = calculateDays(date);
+
+      // create and display message
+      if (days === 0) {
+        message.text(`Hooray! Today is ${event}!`);
+      } else if (days < 0) {
+        message.text(`${event} happened ${(-days).toFixed()} day(s) ago.`);
+      } else if (days > 0) {
+        message.text(`${days.toFixed()} day(s) until ${event}!`);
+      } else {
+        message.text('Please enter the date in MM/DD/YYYY format.');
+      }
+    }
+  }); // end click()
+
+  // set focus on initial page load
+  $('#event').focus();
+
 }); // end ready()

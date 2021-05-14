@@ -1,55 +1,50 @@
-"use strict";
-$( document ).ready(function() {
-    var calculateDiscount = function(customer, subtotal) {
-        switch( customer ) {
-            case "reg":
-                if (subtotal < 100) {
-                    return 0;
-                } else if (subtotal >= 100 && subtotal < 250) {
-                    return .1;
-                } else if (subtotal >= 250 && subtotal < 500) {
-                    return .25;
-                } else if (subtotal >= 500) {
-                    return .3;
-                }
-                break;
-            case "loyal":
-                return .3;
-                break;
-            case "honored":
-                return (subtotal < 500) ? .4 : .5;
-                break;
-            default:
-                return 0;
-                break;
-        }
-    };
-    
-    $("#calculate").click(function() {
-        var discountAmount, invoiceTotal, discountPercent;
+'use strict';
 
-        // get values from page
-        var customerType = $("#type").val();
-        var subtotal = $("#subtotal").val();  
-        subtotal = parseFloat(subtotal);
-        
-        // call function to get discount percent
-        discountPercent = calculateDiscount(customerType, subtotal);
+function calculateDiscount(customer, subtotal) {
+  switch (customer) {
+    case 'reg':
+      if (subtotal < 100) {
+        return 0;
+      }
+      if (subtotal < 250) {
+        return 0.1;
+      }
+      if (subtotal < 500) {
+        return 0.25;
+      }
+      return 0.3;
+    case 'loyal':
+      return 0.3;
+    case 'honored':
+      return subtotal < 500 ? 0.4 : 0.5;
+    default:
+      return 0;
+  }
+}
 
-        // calculate discount amount and invoice total
-        discountAmount = subtotal * discountPercent;
-        invoiceTotal = subtotal - discountAmount;
+$(() => {
+  $('#calculate').click(() => {
+    // get values from page
+    const customerType = $('#type').val();
+    const subtotal = parseFloat($('#subtotal').val());
 
-        // display subtotal to 2 decimals, and all other values
-        $("#subtotal").val( subtotal.toFixed(2) );
-        $("#percent").val( (discountPercent * 100).toFixed(2) );
-        $("#discount").val( discountAmount.toFixed(2) );
-        $("#total").val(  invoiceTotal.toFixed(2) );
-        
-        // set focus on customer dropdown 
-        $("#type").focus();
-    });
-    
-    // set focus on initial load
-    $("#type").focus();
+    // call function to get discount percent
+    const discountPercent = calculateDiscount(customerType, subtotal);
+
+    // calculate discount amount and invoice total
+    const discountAmount = subtotal * discountPercent;
+    const invoiceTotal = subtotal - discountAmount;
+
+    // display subtotal to 2 decimals, and all other values
+    $('#subtotal').val(subtotal.toFixed(2));
+    $('#percent').val((discountPercent * 100).toFixed(2));
+    $('#discount').val(discountAmount.toFixed(2));
+    $('#total').val(invoiceTotal.toFixed(2));
+
+    // set focus on customer dropdown
+    $('#type').focus();
+  });
+
+  // set focus on initial load
+  $('#type').focus();
 });

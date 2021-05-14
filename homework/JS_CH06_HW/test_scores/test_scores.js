@@ -16,8 +16,8 @@ function addScore() {
   if (!name || !score || score < 0 || score > 100) {
     alert('You must enter a name and a valid score');
   } else {
-    names[names.length] = name;
-    scores[scores.length] = score;
+    names.push(name);
+    scores.push(score);
     $('name').value = '';
     $('score').value = '';
   }

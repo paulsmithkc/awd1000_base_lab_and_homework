@@ -1,30 +1,27 @@
-var $ = function (id) {
-    return document.getElementById(id);
-};
-var calculateClick = function () {
-    var investment = parseFloat( $("investment").value );
-    var annualRate = parseFloat( $("rate").value );
-    var years = parseInt( $("years").value );
-	
-	if (isNaN(investment) || investment <= 0) {
-		alert("Investment must be a valid number greater than zero.");
-	} 
-	else if(isNaN(annualRate) || annualRate <= 0) {
-		alert("Annual rate must be a valid number greater than zero.");
-	}
-	else if(isNaN(years) || years <= 0) {
-		alert("Years must be a valid number\nand greater than zero.");
-	}
-	// if all entries are valid, calulate future value
-	else {
-		futureValue = investment;
-		for ( i = 1; i <= years; i++ ) {
-			futureValue += futureValue * annualRate / 100;
-		}
-		$("future_value").value = futureValue.toFixed();
-	} 
-};
-window.onload = function () {
-    $("calculate").onclick = calculateClick;
-    $("investment").focus();
-};
+'use strict';
+
+$(() => {
+
+  $('#calculate').on('click', () => {
+    const investment = parseFloat($('#investment').val());
+    const annualRate = parseFloat($('#rate').val());
+    const years = parseInt($('#years').val(), 10);
+
+    if (!investment || investment <= 0) {
+      alert('Investment must be a valid number greater than zero.');
+    } else if (!annualRate || annualRate <= 0) {
+      alert('Annual rate must be a valid number greater than zero.');
+    } else if (!years || years <= 0) {
+      alert('Years must be a valid number\nand greater than zero.');
+    } else {
+      let futureValue = investment;
+      for (let i = 1; i <= years; i++) {
+        futureValue += (futureValue * annualRate) / 100;
+      }
+      $('#future_value').val(futureValue.toFixed(2));
+    }
+  });
+
+  $('#investment').focus();
+
+});

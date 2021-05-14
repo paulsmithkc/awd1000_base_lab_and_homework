@@ -1,3 +1,7 @@
-$(document).ready(function() {
+'use strict';
 
-}); // end ready
+$(() => {
+
+  // TODO: implement rollover
+
+});

@@ -1,58 +1,54 @@
-"use strict";
-$(document).ready(function() {
-    $("#countdown").click(function() {
-        var event = $("#event").val();
-        var dt = $("#date").val();  
-        var message = $("#message");  
-        var date, days, today, oneDay;
+'use strict';
 
-        // clear previous message
-        message.text( " " );
+$(() => {
+  $('#countdown').click(() => {
+    const event = $('#event').val();
+    const dt = $('#date').val();
+    const message = $('#message');
+    let date = null;
 
-        //make sure task and due date are entered and correct
-        if (event.length === 0 || dt.length === 0) {
-            message.text( "Please enter both a name and a date." );
-        } else {
-            //make sure due date string has slashes and a 4-digit year
-            if (dt.indexOf("/") === -1) { 
-                message.text( "Please enter the date in MM/DD/YYYY format." );
-            } 
+    // clear previous message
+    message.text('');
 
-            var year = dt.substring(dt.length - 4); 
-            if (isNaN(year)) {
-                message.text( "Please enter the date in MM/DD/YYYY format." );
-            }  
+    // make sure task and due date are entered and correct
+    if (!event || !dt) {
+      message.text('Please enter both a name and a date.');
+    } else {
+      // make sure due date string has at least one slash
+      if (dt.indexOf('/') === -1) {
+        message.text('Please enter the date in MM/DD/YYYY format.');
+      }
 
-            //convert due date string to Date object and make sure date is valid
-            date = new Date(dt);
-            if (date === "Invalid Date") {
-                message.text( "Please enter the date in MM/DD/YYYY format." );
-            }
-        }  
+      // make sure due date string ends with a 4-digit year
+      const year = parseInt(dt.substring(dt.length - 4), 10);
+      if (!year) {
+        message.text('Please enter the date in MM/DD/YYYY format.');
+      }
 
-        // if no error messages, calculate and display days until event
-        if (message.text() === " ") {
+      // convert due date string to Date object
+      date = new Date(dt);
+    }
 
-            //calculate days
-            today = new Date();
-            oneDay = 24*60*60*1000; // hours * minutes * seconds * milliseconds    
-            days = ( date.getTime() - today.getTime() ) / oneDay;
-            days = Math.ceil(days);
+    // if no error messages, calculate and display days until event
+    if (date) {
+      // calculate days
+      const today = new Date();
+      const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+      const days = Math.ceil((date.getTime() - today.getTime()) / oneDay);
 
-            //create and display message 
-            if (days === 0) {
-                message.text( "Hooray! Today is " + event + "!" );
-            }
-            if (days < 0) {
-                event = event.substring(0,1).toUpperCase() + event.substring(1); // capitalize event
-                message.text( event + " happened " + Math.abs(days) + " day(s) ago." );        
-            }
-            if (days > 0) {
-                message.text( days + " day(s) until " + event + "!" );
-            }
-        }
-    }); // end click()
-    
-    // set focus on initial page load
-    $("#event").focus();
+      // create and display message
+      if (days === 0) {
+        message.text(`Hooray! Today is ${event}!`);
+      } else if (days < 0) {
+        message.text(`${event} happened ${(-days).toFixed()} day(s) ago.`);
+      } else if (days > 0) {
+        message.text(`${days.toFixed()} day(s) until ${event}!`);
+      } else {
+        message.text('Please enter the date in MM/DD/YYYY format.');
+      }
+    }
+  }); // end click()
+
+  // set focus on initial page load
+  $('#event').focus();
 }); // end ready()
