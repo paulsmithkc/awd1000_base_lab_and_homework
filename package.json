@@ -1,0 +1,11 @@
+{
+  "name": "awd1000_base_lab_and_homework",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "prettier": "^2.3.0"
+  }
+}
