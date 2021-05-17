@@ -26,6 +26,3 @@ jobs:
           eslint: true
           prettier: true
           stylelint: true
-
-      - name: Run HTML validator
-        uses: Cyb3r-Jak3/html5validator-action
