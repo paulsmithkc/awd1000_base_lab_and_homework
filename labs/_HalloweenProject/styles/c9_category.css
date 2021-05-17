@@ -91,10 +91,12 @@ aside {
   margin: 0;
   padding: 0 5%;
 }
+
 #nav_list ul li {
   margin-bottom: 0.5em;
   border: 2px solid black;
 }
+
 #nav_list ul li a {
   display: block;
   font-weight: bold;
