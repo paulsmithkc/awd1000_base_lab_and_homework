@@ -24,8 +24,9 @@ jobs:
         uses: wearerequired/lint-action@v1
         with:
           eslint: true
-          prettier: true
           stylelint: true
+          prettier: true
+          prettier_extensions: htm,html,css,js
 
       - name: Run html-validate
         run: npx html-validate '**/*.html'
