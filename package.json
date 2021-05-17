@@ -5,10 +5,8 @@
   "license": "MIT",
   "scripts": {
     "eslint": "npx eslint",
-    "stylelint": "npx stylelint **/*.css",
-    "html-validate-homework": "npx html-validate homework/**/*.html",
-    "html-validate-labs": "npx html-validate labs/**/*.html",
-    "html-validate-tests": "npx html-validate tests/**/*.html"
+    "stylelint": "npx stylelint '**/*.css'",
+    "html-validate": "npx html-validate '**/*.html'"
   },
   "dependencies": {},
   "devDependencies": {
