@@ -25,7 +25,7 @@ jobs:
         with:
           eslint: true
           stylelint: true
-          prettier: true
+          prettier: false
           prettier_extensions: htm,html,css,js
 
       - name: Run html-validate

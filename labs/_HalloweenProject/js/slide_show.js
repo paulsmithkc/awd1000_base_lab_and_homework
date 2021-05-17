@@ -30,5 +30,4 @@ $(() => {
       timer1 = setInterval(runSlideShow, 1000);
     }
   });
-
 });
