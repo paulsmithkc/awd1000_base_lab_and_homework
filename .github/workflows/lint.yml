@@ -27,5 +27,5 @@ jobs:
           prettier: true
           stylelint: true
 
-      - name: Run HTML linter
+      - name: Run html-validate
         run: npx html-validate '**/*.html'
