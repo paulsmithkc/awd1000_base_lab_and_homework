@@ -1,5 +1,6 @@
 /.github
 /.vscode
+/node_modules
 /examples
 /murach_html_4e
 /murach_js_3e
