@@ -29,5 +29,3 @@ jobs:
 
       - name: Run HTML validator
         uses: Cyb3r-Jak3/html5validator-action
-        with:
-          root: /
