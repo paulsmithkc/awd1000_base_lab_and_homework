@@ -5,23 +5,14 @@
 /murach_js_3e
 /murach_js_4e
 
-bootstrap.css
-bootstrap-reboot.css
-bootstrap-grid.css
 bootstrap.js
 bootstrap.bundle.js
 jquery.js
 jquery-3.5.1.js
 jquery-3.6.0.js
 jquery-ui.js
-jquery-ui.css
 jquery.bxslider.js
-jquery.bxslider.css
 jquery.slicknav.js
 
-*.min.css
 *.min.js
 *.map
-*.md
-*.pdf
-*.pptx
