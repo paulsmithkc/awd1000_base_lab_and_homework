@@ -1,4 +1,8 @@
 extends: 'stylelint-config-standard'
 rules:
+  indentation: [2, { "severity": "warning", "message": "Please use 2 spaces for indentation." }]
+  no-eol-whitespace: [true, { "severity": "warning", "message": "Please remove trailing whitespace." }]
+  block-closing-brace-newline-before: ["always-multi-line", { "severity": "warning" }]
+  declaration-block-semicolon-newline-after: ["always-multi-line", { "severity": "warning" }]
   rule-empty-line-before: null
   no-descending-specificity: null
