@@ -1,8 +1,14 @@
 extends: 'stylelint-config-standard'
 rules:
-  indentation: [2, { "severity": "warning", "message": "Please use 2 spaces for indentation." }]
+  indentation: [2, { "severity": "error", "message": "Please use 2 spaces for indentation." }]
   no-eol-whitespace: [true, { "severity": "warning", "message": "Please remove trailing whitespace." }]
+  no-missing-end-of-source-newline: [true, { "severity": "warning", "message": "Please include a blank line at the end of the file." }]
+  selector-list-comma-newline-before: ["never-multi-line", { "severity": "warning" }]
+  selector-list-comma-newline-after: ["always-multi-line", { "severity": "warning" }]
   block-closing-brace-newline-before: ["always-multi-line", { "severity": "warning" }]
+  block-closing-brace-newline-after: ["always", { "severity": "warning" }]
   declaration-block-semicolon-newline-after: ["always-multi-line", { "severity": "warning" }]
+  declaration-colon-space-before: ["never", { "severity": "warning" }]
+  declaration-colon-space-after: ["always-single-line", { "severity": "warning" }]
   rule-empty-line-before: null
   no-descending-specificity: null
