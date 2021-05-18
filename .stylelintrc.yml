@@ -1,10 +1,25 @@
 extends: 'stylelint-config-standard'
 rules:
   indentation: [2, { "severity": "error", "message": "Please use 2 spaces for indentation." }]
-  no-eol-whitespace: [true, { "severity": "warning", "message": "Please remove trailing whitespace." }]
-  no-missing-end-of-source-newline: [true, { "severity": "warning", "message": "Please include a blank line at the end of the file." }]
+  no-eol-whitespace: [true, { "severity": "error", "message": "Please remove trailing whitespace." }]
+  no-missing-end-of-source-newline: [true, { "severity": "error", "message": "Please include a blank line at the end of the file." }]
+  selector-attribute-brackets-space-inside: ["never", { "severity": "warning" }]
+  selector-attribute-operator-space-before: ["never", { "severity": "warning" }]
+  selector-attribute-operator-space-after: ["never", { "severity": "warning" }]
+  selector-attribute-quotes: null
+  selector-combinator-space-before: ["always", { "severity": "warning" }]
+  selector-combinator-space-after: ["always", { "severity": "warning" }]
+  selector-descendant-combinator-no-non-space: true
+  selector-type-case: "lower"
+  selector-pseudo-element-case: "lower"
+  selector-pseudo-class-case: "lower"
+  selector-pseudo-class-parentheses-space-inside: ["never", { "severity": "warning" }]
+  selector-list-comma-space-before: ["never", { "severity": "warning" }]
+  selector-list-comma-space-after: ["always", { "severity": "warning" }]
   selector-list-comma-newline-before: ["never-multi-line", { "severity": "warning" }]
   selector-list-comma-newline-after: ["always-multi-line", { "severity": "warning" }]
+  block-opening-brace-space-before: ["always", { "severity": "warning" }]
+  block-opening-brace-space-after: ["always", { "severity": "warning" }]
   block-closing-brace-newline-before: ["always-multi-line", { "severity": "warning" }]
   block-closing-brace-newline-after: ["always", { "severity": "warning" }]
   declaration-block-semicolon-newline-after: ["always-multi-line", { "severity": "warning" }]
