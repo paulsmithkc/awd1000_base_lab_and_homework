@@ -20,7 +20,7 @@ rules:
   selector-list-comma-newline-after: ["always-multi-line", { "severity": "warning" }]
   block-opening-brace-space-before: ["always", { "severity": "warning" }]
   block-opening-brace-space-after: ["always-single-line", { "severity": "warning" }]
-  block-opening-brace-newline-before: null # "never" not supported
+  block-opening-brace-newline-before: null # rule does not behave as expected (bug)
   block-opening-brace-newline-after: ["always-multi-line", { "severity": "warning" }]
   block-closing-brace-newline-before: ["always-multi-line", { "severity": "warning" }]
   block-closing-brace-newline-after: ["always", { "severity": "warning" }]
@@ -29,7 +29,9 @@ rules:
   declaration-colon-space-before: ["never", { "severity": "warning", "message": "Please remove the space before the colon." }]
   declaration-colon-space-after: ["always-single-line", { "severity": "warning", "message": "Please include a space after the colon." }]
   comment-whitespace-inside: ["always", { "severity": "warning" }]
-  comment-empty-line-before: null
-  rule-empty-line-before: null
-  no-descending-specificity: null
-  color-hex-case: null
+  comment-empty-line-before: null # pedantic rule, not enforced
+  rule-empty-line-before: null # pedantic rule, not enforced
+  color-hex-case: null # pedantic rule, not enforced
+  no-descending-specificity: null # rule does not behave as expected (bug)
+  length-zero-no-unit: [true, { "severity": "warning", "message": "Please remove the unit, when specifying a length of zero." }]
+  max-empty-lines: 2
