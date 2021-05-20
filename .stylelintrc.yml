@@ -1,7 +1,7 @@
 extends: 'stylelint-config-standard'
 rules:
   indentation: [2, { "severity": "error", "message": "Please use 2 spaces for indentation." }]
-  no-eol-whitespace: [true, { "severity": "error", "message": "Please remove trailing whitespace." }]
+  no-eol-whitespace: [true, { "severity": "error", "message": "Please remove trailing whitespace from this line." }]
   no-missing-end-of-source-newline: [true, { "severity": "error", "message": "Please include a blank line at the end of the file." }]
   selector-attribute-brackets-space-inside: ["never", { "severity": "warning" }]
   selector-attribute-operator-space-before: ["never", { "severity": "warning" }]
@@ -15,17 +15,21 @@ rules:
   selector-pseudo-class-case: "lower"
   selector-pseudo-class-parentheses-space-inside: ["never", { "severity": "warning" }]
   selector-list-comma-space-before: ["never", { "severity": "warning" }]
-  selector-list-comma-space-after: ["always", { "severity": "warning" }]
+  selector-list-comma-space-after: ["always-single-line", { "severity": "warning" }]
   selector-list-comma-newline-before: ["never-multi-line", { "severity": "warning" }]
   selector-list-comma-newline-after: ["always-multi-line", { "severity": "warning" }]
   block-opening-brace-space-before: ["always", { "severity": "warning" }]
-  block-opening-brace-space-after: ["always", { "severity": "warning" }]
+  block-opening-brace-space-after: ["always-single-line", { "severity": "warning" }]
+  block-opening-brace-newline-before: null # "never" not supported
+  block-opening-brace-newline-after: ["always-multi-line", { "severity": "warning" }]
   block-closing-brace-newline-before: ["always-multi-line", { "severity": "warning" }]
   block-closing-brace-newline-after: ["always", { "severity": "warning" }]
   declaration-block-semicolon-newline-after: ["always-multi-line", { "severity": "warning" }]
-  declaration-colon-space-before: ["never", { "severity": "warning" }]
-  declaration-colon-space-after: ["always-single-line", { "severity": "warning" }]
+  declaration-block-trailing-semicolon: "always"
+  declaration-colon-space-before: ["never", { "severity": "warning", "message": "Please remove the space before the colon." }]
+  declaration-colon-space-after: ["always-single-line", { "severity": "warning", "message": "Please include a space after the colon." }]
   comment-whitespace-inside: ["always", { "severity": "warning" }]
   comment-empty-line-before: null
   rule-empty-line-before: null
   no-descending-specificity: null
+  color-hex-case: null
