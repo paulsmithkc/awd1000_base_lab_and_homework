@@ -19,3 +19,4 @@ rules:
   no-nested-ternary: 0
   no-plusplus: 0
   padded-blocks: 0
+  radix: 0
