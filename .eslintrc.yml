@@ -9,6 +9,7 @@ parserOptions:
   sourceType: 'script'
 rules:
   linebreak-style: 0
+  operator-linebreak: 0
   indent: ['warn', 2, { SwitchCase: 1 }]
   strict: ['warn', 'global']
   spaced-comment: ['warn']
