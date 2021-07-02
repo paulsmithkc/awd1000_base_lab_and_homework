@@ -7,6 +7,9 @@ extends:
 parserOptions:
   ecmaVersion: 12
   sourceType: 'script'
+reportUnusedDisableDirectives: true
+plugins:
+  - document-write
 rules:
   linebreak-style: 0
   operator-linebreak: 0
@@ -17,7 +20,14 @@ rules:
   no-alert: ['warn']
   no-extra-semi: ['warn']
   no-trailing-spaces: ['warn']
+  no-restricted-globals: ['warn']
+  no-restricted-syntax: 0
   no-nested-ternary: 0
   no-plusplus: 0
   padded-blocks: 0
   radix: 0
+  lines-around-directive: 0
+  guard-for-in: 0
+  operator-assignment: ['warn']
+  quotes: ['warn']
+  document-write/no-document-write: ['warn']
