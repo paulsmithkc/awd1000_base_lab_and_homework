@@ -1,0 +1,31 @@
+
+img {
+  /* width: 400px; */
+  max-width: 100%;
+}
+
+.gallery-thumbnails ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.gallery-thumbnails ul li {
+  flex-basis: 200px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.gallery-thumbnails li,
+.gallery-thumbnails a,
+.gallery-thumbnails img {
+  display: block;
+  border: none;
+  outline: none;
+}
+
+.gallery-thumbnails a:focus,
+.gallery-thumbnails a.active {
+  border: 3px solid blue;
+  outline: none;
+}
