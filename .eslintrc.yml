@@ -24,6 +24,7 @@ rules:
   no-restricted-syntax: 0
   no-nested-ternary: 0
   no-plusplus: 0
+  no-console: 0
   padded-blocks: 0
   radix: 0
   lines-around-directive: 0
